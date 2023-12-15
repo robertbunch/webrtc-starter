@@ -1,0 +1,31 @@
+#videos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.video-player{
+    background-color: black;
+    width: 100%;
+}
+
+#video-wrapper{
+    position: relative;
+}
+
+#waiting{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 240px;
+    height: 40px;
+
+}
+
+#answer{
+    
+}
