@@ -1,9 +1,10 @@
-Setup https:
+# Setup https:
 1. npm install mkcert -g
 2. mkcert create-ca
 3. mkcert create-cert
 4. OPTIONAL: to run it locally, update the files with your local IP
 
+# Steps in a WebRTC app
 1. getUserMedia() is run - CLIENT1/Init/Caller/Offerer
 2. CLIENT1 creates an RTCPeerConnection object called peerConnection
 3. the new peerConnection needs STUN servers so other clients can find
@@ -28,7 +29,7 @@ Signal server needs to be running for 8 on
     - socket.io server holds it for when another client responds
     - associate the ICE candidates with CLIENT1
 
-CLIENT1 and Signaling server wait for CLIENT2
+## CLIENT1 and Signaling server wait for CLIENT2
 
 10. CLIENT2 loads up the webpage 
     - io.connect() runs and connects to the socket.io server
@@ -46,7 +47,7 @@ CLIENT1 and Signaling server wait for CLIENT2
     - CLIENT2 can pass the offer to peerconnection.setRemoteDescription()
 18. (ASYNC) Once #16 runs, CLIENT2 can start collecting ICE candidates 
 
-Signaling server (socket.io) has been waiting...
+## Signaling server (socket.io) has been waiting...
 
 19. CLIENT2 emits answer (RTCSessionDesc - sdp/type) up to signaling server
 20. (ASYNC) CLIENT2 will listen for tracks/ICE from remote. 
@@ -58,6 +59,6 @@ Signaling server (socket.io) has been waiting...
 22. CLIENT1 takes the answer and passes it to pc.setRemoteDescription()
 23. (ASYNC) CLIENT1 waits for ICE candidates and tracks
 
-21 & 23 are waiting for ICE candidates. 
+## 21 & 23 are waiting for ICE candidates. 
     - Once they are exchanged, tracks will exchange
-CONNECTED!!
+# CONNECTED!!
